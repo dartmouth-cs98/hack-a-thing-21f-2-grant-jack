@@ -1,23 +1,15 @@
-//
-//  ViewController.swift
-//  game-tutorial
-//
-//  Created by Grant Dumanian on 9/27/21.
-//  Copyright © 2021 Grant Dumanian. All rights reserved.
-//
 import UIKit
 
 class ViewController: UIViewController {
-
     var previousCardValue = 0
     var currentCardValue = 0
     var score = 0
-
     
+    @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var highButton: UIButton!
     @IBOutlet weak var lowButton: UIButton!
-    @IBOutlet weak var scoreLabel: UILabel!
-    @IBOutlet weak var cardLabel: UILabel!
+    @IBOutlet weak var cardImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         randomizeCard()
@@ -27,7 +19,7 @@ class ViewController: UIViewController {
     func randomizeCard() {
         previousCardValue = currentCardValue
         currentCardValue = Int.random(in: 1 ... 13)
-        cardLabel.text = String(currentCardValue)
+        cardImageView.image = UIImage(named: String(currentCardValue))
     }
     
     func increaseScore() {
@@ -40,6 +32,15 @@ class ViewController: UIViewController {
         score = 0
     }
     
+    @IBAction func lowButtonPressed(_ sender: Any) {
+        randomizeCard()
+        if currentCardValue < previousCardValue {
+            increaseScore()
+        } else {
+            gameOver()
+        }
+    }
+    
     @IBAction func highButtonPressed(_ sender: Any) {
         randomizeCard()
         if currentCardValue >= previousCardValue {
@@ -48,13 +49,4 @@ class ViewController: UIViewController {
             gameOver()
         }
     }
-    @IBAction func lowButtonPressed(_ sender: Any) {
-        if currentCardValue < previousCardValue {
-            increaseScore()
-        } else {
-            gameOver()
-        }
-    }
 }
-
-
