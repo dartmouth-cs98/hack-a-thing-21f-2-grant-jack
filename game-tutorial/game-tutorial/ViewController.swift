@@ -9,6 +9,11 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var previousCardValue = 0
+    var currentCardValue = 0
+    var score = 0
+
+    
     @IBOutlet weak var highButton: UIButton!
     @IBOutlet weak var lowButton: UIButton!
     @IBOutlet weak var scoreLabel: UILabel!
@@ -20,17 +25,36 @@ class ViewController: UIViewController {
     }
     
     func randomizeCard() {
-        var currentCardValue = Int.random(in: 1 ... 13)
+        previousCardValue = currentCardValue
+        currentCardValue = Int.random(in: 1 ... 13)
         cardLabel.text = String(currentCardValue)
     }
     
+    func increaseScore() {
+        score = score + 1
+        scoreLabel.text = "Score: " + String(score)
+    }
+    
+    func gameOver() {
+        scoreLabel.text = "Game over!"
+        score = 0
+    }
     
     @IBAction func highButtonPressed(_ sender: Any) {
         randomizeCard()
+        if currentCardValue >= previousCardValue {
+            increaseScore()
+        } else {
+            gameOver()
+        }
     }
     @IBAction func lowButtonPressed(_ sender: Any) {
-        randomizeCard()
+        if currentCardValue < previousCardValue {
+            increaseScore()
+        } else {
+            gameOver()
+        }
     }
-    
 }
+
 
