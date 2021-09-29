@@ -11,11 +11,13 @@ Include some screenshots.
 ## Who Did What?
 
 Grant: Built the initial app, up to working card images
+
 John:
 
 ## What you learned
 
 Grant: The basics of how to set up a single-page iOS app, learning basic swift and functionality
+
 John:
 
 ## Authors
