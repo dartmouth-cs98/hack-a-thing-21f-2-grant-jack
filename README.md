@@ -10,16 +10,19 @@ Include some screenshots.
 
 ## Who Did What?
 
-TODO: who worked on what part?
+Grant: Built the initial app, up to working card images
+John:
 
 ## What you learned
 
-TODO: what worked / what didn't work
+Grant: The basics of how to set up a single-page iOS app, learning basic swift and functionality
+John:
 
 ## Authors
 
-TODO: list of authors
+Grant Dumanian
+
 
 ## Acknowledgments
 
-TODO: cite any tutorials followed here
+https://www.zerotoappstore.com/how-to-make-an-ios-game.html
