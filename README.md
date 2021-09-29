@@ -16,7 +16,7 @@ John:
 
 ## What you learned
 
-Grant: The basics of how to set up a single-page iOS app, learning basic swift and functionality
+Grant: The basics of how to set up a single-page iOS app, learning basic swift and functionality. The XCode/iOS app is _incredibly_ easy and quick to use, really fast to set up as well. Definitely makes me excited to build an app w/ XCode. 
 
 John:
 
